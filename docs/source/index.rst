@@ -10,7 +10,7 @@ Welcome to API Pools's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   architecture/index
 
 Indices and tables
 ==================
