@@ -3,14 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to API Pools's documentation!
-=====================================
+API Pools
+=========
+
+Semantic interoperability primitives: canonical resources, capability contracts, normalization helpers, and semantic pagination. Start with :doc:`library/quickstart` or :doc:`architecture/index`.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   library/index
    architecture/index
+   constitution/index
 
 Indices and tables
 ==================

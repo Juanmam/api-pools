@@ -19,7 +19,7 @@ Failures partition into:
 API Pools requires **explicit treatment** of (2). Conflating (2) with (1) produces **masked incompatibility**: callers cannot distinguish “down” from “not meaningfully supported.”
 
 Interoperability failures (conceptual categories)
------------------------------------------------
+--------------------------------------------------
 
 The taxonomy is **semantic**; names may vary in implementation.
 

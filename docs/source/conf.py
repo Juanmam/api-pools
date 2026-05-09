@@ -1,27 +1,43 @@
 # Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+from __future__ import annotations
 
-project = 'API Pools'
-copyright = '2026, Juan Manuel Mejia Botero'
-author = 'Juan Manuel Mejia Botero'
+import pathlib
+import sys
 
-# -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "src"))
 
-extensions = []
+project = "API Pools"
+copyright = "2026, Juan Manuel Mejia Botero"
+author = "Juan Manuel Mejia Botero"
+release = "0.2.0"
 
-templates_path = ['_templates']
-exclude_patterns = []
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
+]
 
+templates_path = ["_templates"]
+exclude_patterns: list[str] = []
 
+html_theme = "furo"
+html_title = "API Pools"
+html_static_path = ["_static"]
+language = "en"
 
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+html_theme_options = {
+    "sidebar_hide_name": False,
+    "footer_icons": [],
+}
 
-html_theme = 'alabaster'
-html_static_path = ['_static']
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/3", None),
+}
+
+nitpick_ignore = [
+    ("py:class", "Protocol"),
+    ("py:class", "typing.Protocol"),
+]

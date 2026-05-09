@@ -31,6 +31,8 @@ Documents
      - Provider truth vs canonical truth, version-aware mapping, fidelity and provenance
    * - :doc:`interoperability-error-semantics`
      - First-class failure modes, structured incompatibility, observability
+   * - :doc:`implementation-map`
+     - Python package layout vs conceptual layers (installable ``apipools`` only)
 
 Minimum coherent core
 ---------------------
@@ -80,3 +82,4 @@ For full detail, read the linked documents in the toctree below.
    capability-contracts
    normalization-contracts
    interoperability-error-semantics
+   implementation-map

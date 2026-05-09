@@ -110,7 +110,7 @@ Why capabilities are more than metadata
 Capabilities anchor **honest interoperability**: they align declared possibility with **lawful behavior**.
 
 Feature flags vs behavioral contracts
------------------------------------
+-------------------------------------
 
 **Feature flags** typically toggle code paths opaquely. **Behavioral contracts**:
 
@@ -143,7 +143,7 @@ When degradation is allowed by strategy policy:
 **Silent** degradation—returning incomplete data as if complete—is an interoperability anti-pattern.
 
 Future-facing considerations (without designing orchestration)
--------------------------------------------------------------
+----------------------------------------------------------------
 
 Capabilities are intentionally shaped so that **later** they can feed:
 
