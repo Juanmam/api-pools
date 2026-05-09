@@ -1,0 +1,8 @@
+{
+  "_provider": "facebook_graph_comment",
+  "id": "fb_cmt_1",
+  "post_id": "fb_post_1",
+  "message": "Nice post",
+  "author_id": "user_444",
+  "created_time": "2024-01-15T11:30:00+0000"
+}

@@ -1,0 +1,10 @@
+{
+  "_provider": "youtube_data_v3_comment",
+  "id": "ugc_fixture_comment",
+  "video_id": "abc123XYZ",
+  "_snippet_flat": {
+    "textOriginal": "Great video",
+    "authorChannelId": "UC_commenter",
+    "publishedAt": "2023-09-10T01:02:03Z"
+  }
+}

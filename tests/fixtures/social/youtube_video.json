@@ -1,0 +1,8 @@
+{
+  "_provider": "youtube_data_v3_video",
+  "id": "abc123XYZ",
+  "title": "Fixture title",
+  "description": "Fixture description paragraph.",
+  "channel_id": "UC_fixture_channel",
+  "published_at": "2023-09-09T07:07:07Z"
+}
