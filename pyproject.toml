@@ -1,0 +1,102 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apipools"
+version = "0.2.0"
+description = "Semantic interoperability framework for heterogeneous APIs (canonical semantics, capabilities, normalization, pagination)."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "Juan Manuel Mejia Botero" }]
+keywords = ["api", "interop", "normalization", "pagination", "capabilities"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+redis = ["redis>=5.0.0"]
+dev = [
+  "pytest>=8.0.0",
+  "pytest-cov>=4.1.0",
+  "hypothesis>=6.100.0",
+  "ruff>=0.4.0",
+  "mypy>=1.10.0",
+  "httpx>=0.27.0",
+  "authlib>=1.3.2",
+]
+docs = ["sphinx>=7.2.0,<8", "furo>=2024.8.9"]
+
+[project.urls]
+Homepage = "https://github.com/juanm/api-pools"
+Documentation = "https://github.com/juanm/api-pools#readme"
+Repository = "https://github.com/juanm/api-pools"
+
+[project.scripts]
+apipools-compliance = "compliance_cli.run:main"
+
+[tool.setuptools.packages.find]
+where = ["src", "."]
+include = ["apipools*", "compliance_cli*"]
+
+[tool.setuptools.package-data]
+apipools = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q --import-mode=importlib"
+markers = [
+  "live: hits real provider APIs (requires credentials; skipped by default)",
+]
+
+[tool.coverage.run]
+source = ["apipools"]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = ["pragma: no cover", "if TYPE_CHECKING:"]
+
+[tool.ruff]
+src = ["src", "tests", "compliance_cli"]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "W"]
+extend-ignore = ["UP042"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["E731"]
+"compliance_cli/registry.py" = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "src"
+explicit_package_bases = true
+packages = ["apipools"]
+strict = false
+warn_return_any = true
+warn_unused_ignores = true
+disallow_untyped_defs = false
+
+[[tool.mypy.overrides]]
+module = "redis.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["httpx.*", "authlib.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "compliance_cli.*"
+ignore_errors = true
