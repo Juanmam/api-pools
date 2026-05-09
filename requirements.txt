@@ -1,0 +1,4 @@
+# Install the library from the repo root:
+#   pip install -e ".[dev]"
+#
+# Runtime dependencies are declared in pyproject.toml (currently none).
